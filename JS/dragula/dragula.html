@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <link href='drag.css' rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+  <div id='left1' class='container'>
+    <div>Move me, but you can only drop me in one of these containers.</div>
+    <div>If you try to drop me somewhere other than these containers, I'll just come back.</div>
+    <div>Item 3.</div>
+    <div>Item 6.</div>
+  </div>
+  <p id="left-count"></p>
+  <br>
+  <div id='right1' class='container'>
+    <div>You can drop me in the left container, otherwise I'll stay here.</div>
+    <div>Item 4.</div>
+    <div>Item 5.</div>
+  </div>
+  <p id="right-count"></p>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/$VERSION/dragula.min.js'></script>
+</body>
+<script type="text/javascript"> 
+  window.onload = function() {
+     dragula([document.getElementById('left1'), document.getElementById('right1')]);
+  }
+
+    // document.addEventListener('ondrop', alert('ok'))
+  // setInterval(count, 1000);
+//   drake.on('drop',function(el, target, source, sibling){
+// console.log(el);
+// console.log(target);
+// console.log(source);
+// console.log(sibling);
+// });
+
+// document.getElementById('#left1').bind('DOMNodeInserted',function(event){
+//     if(event.target.parentNode.id == 'parent') {
+//       var left = document.getElementById('left1').childElementCount;
+//       document.getElementById('left-count').innerHTML = left
+//     };
+// }, false );
+document.addEventListener('mousemove', count)
+
+  function count() {
+    var left = document.getElementById('left1').childElementCount;
+    var right = document.getElementById('right1').childElementCount;
+    document.getElementById('left-count').innerHTML = "The number of the words on this side is " + left
+    document.getElementById('right-count').innerHTML = "The number of the words on this side is " + right
+  }
+</script>
+
+</html>
+
+<script src='dist/dragula.js' type="text/javascript"></script>
+

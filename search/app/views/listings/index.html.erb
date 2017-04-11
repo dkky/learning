@@ -1,0 +1,23 @@
+<h1>Listings#index</h1>
+<p>Find me in app/views/listings/index.html.erb</p>
+
+<%= form_tag listings_path, method: :get, class: 'form-group' do %>
+  <%= submit_tag "GO", name: nil, class: 'btn btn-default submit-button' %>
+  <%= text_field_tag :search, params[:search], class: 'form-control search-bar' %>
+<% end %>
+
+
+<% if @listings.blank? %>
+  <h4>There are no listings containing the term <%= params[:search] %>.</h4>
+<% else %>
+<div class="row">  
+  <% @listings.each do |listing| %>
+  <div class="col-md-4 well">
+      <p>name: <%= listing.name %></p>
+      <p>location: <%= listing.location %></p>
+      <p>bedrooms: <%= listing.bedrooms %></p>
+      <p>bathrooms:<%= listing.bathrooms %></p>     
+  </div>
+  <% end %>
+<% end %>
+</div>

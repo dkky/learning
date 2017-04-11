@@ -1,0 +1,26 @@
+#demo {
+  width: 300px;
+  height: 200px;
+  border: 10px solid green;
+  padding: 25px;
+  margin: 25px;
+  text-align: center;
+  font-size: 25px;
+  margin: 0 auto;
+}
+
+.center {
+  width: 100%;
+}
+
+#buttons {
+  margin: 10px;
+  text-align: center;
+}
+
+#tray {
+  border: solid;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
